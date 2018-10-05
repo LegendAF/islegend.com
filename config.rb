@@ -3,8 +3,6 @@ require 'active_support/core_ext/integer/inflections'
 
 Time.zone = "Eastern Time (US & Canada)"
 
-#activate :scss_lint
-
 activate :autoprefixer, browsers: [
   'last 2 versions'
 ]

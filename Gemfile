@@ -7,7 +7,6 @@ gem "middleman", "~> 4.2.1"
 gem "middleman-blog", "~> 4.0"
 gem "middleman-livereload"
 gem 'middleman-autoprefixer'
-gem "middleman-scss-lint", github: "middleman/middleman-scss-lint", branch: "master"
 gem "middleman-minify-html"
 gem 'middleman-pagination', "~>1.2.0", :git => "https://github.com/jc00ke/middleman-pagination.git"
 
@@ -22,9 +21,6 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 # Markdwon
 #gem 'kramdown'
 gem 'redcarpet'
-
-# Linter
-gem 'scss_lint', require: false
 
 # Deployment
 gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy', branch: 'master'
