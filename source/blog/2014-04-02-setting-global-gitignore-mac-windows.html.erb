@@ -1,0 +1,88 @@
+---
+title: Setting up a global .gitignore on Mac and Windows
+date: 2014-04-02 11:00:30 -0500
+author: afernandez
+category: development
+tags: ds-store, gitignore, git, mac, windows
+excerpt: Tired of having to create a .gitignore in every project to stop sending .DS_Store, .log, .sql, etc, to your repos? Create a global .gitignore. It’s easy.
+featuredImage:
+  url: /assets/images/blog/picture.jpg
+  caption: picture.jpg
+---
+
+<p>Using a <a href="http://git-scm.com/docs/gitignore" target="_blank" rel="nofollow">.gitignore</a> file can be very useful. It is used to ignore certain files on specific projects. But what should you do if you find yourself consistently creating a .gitignore for the same files on every project? Create a global .gitignore!</p>
+
+<p>What are some examples of files that you would want to ignore on every project? I have listed just a few below:</p>
+
+<ul>
+	<li>.DS_Store</li>
+	<li>Thumbs.db</li>
+	<li>.log</li>
+	<li>.sql</li>
+	<li>.sass-cache/</li>
+	<li>.codekit-config.json</li>
+</ul>
+
+<h2>Create and set the .gitignore</h2>
+
+<p>Create a typical .gitignore containing the files you want to ignore and name it whatever you want, typcially <strong>.gitignore_global</strong>, and put it wherever you want, typically at <strong>~/</strong>. Once you have done that then type the following command into terminal:</p>
+
+<h3>Mac</h3>
+
+<pre><code class="html">git config --global core.excludesfile '~/.gitignore_global'</code></pre>
+
+<h3>Windows</h3>
+
+<pre><code class="html">git config --global core.excludesfile "%USERPROFILE%\.gitignore_global"</code></pre>
+
+<p>That’s it! Enjoy not sending thousands of .DS_Store files to your repo. It’s probably the most annoying thing about using Mac.</p>
+
+<h2>Example of a global .gitignore</h2>
+
+<p>Here is an example of my own personal global .gitignore. You may want to add or remove some of the things on it to better suit your needs.</p>
+
+<pre><code class="html">
+#compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# codekit #
+###########
+.sass-cache/
+.codekit-config.json
+config.codekit
+</code></pre>

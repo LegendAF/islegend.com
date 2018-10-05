@@ -1,0 +1,461 @@
+// Bulma.io
+@import '../../../node_modules/bulma/sass/utilities/_all';
+@import 'settings/variables';
+
+// Set your colors
+$primary: #8c67ef;
+$primary-invert: findColorInvert($primary);
+$twitter: #4099FF;
+$twitter-invert: findColorInvert($twitter);
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert),
+    "twitter": ($twitter, $twitter-invert)
+);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+@import '../../../node_modules/bulma/bulma';
+
+// Partials
+@import 'base/all';
+@import 'layout/all';
+@import 'elements/all';
+@import 'components/all';
+@import 'vendor/all';
+
+.set-input-the-same-height-as-taginput .input {
+  min-height: 44px;
+}
+
+html {
+  background-color: $color-blue;
+}
+
+.section {
+  background-color: $white;
+  position: relative;
+  z-index: 1;
+
+  &.is-dark {
+    color: $white;
+  }
+
+}
+// .section
+
+.tile.box {
+  background-position: center;
+  background-size: cover;
+}
+// .tile.box
+
+.is-paddingless-top {
+  padding-top: 0 !important;
+}
+
+.hero-art {
+  bottom: 0;
+  margin-bottom: -25px;
+  position: absolute;
+  right: -15px;
+  text-align: right;
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+
+  img {
+    display: inline-block;
+    height: auto;
+    width: 100%;
+  }
+
+  &--games {
+
+    @include tablet-only {
+      width: 29%;
+    }
+
+    @include desktop-only {
+      width: 28%;
+    }
+
+    @include widescreen-only {
+      width: 22%;
+    }
+
+    @include fullhd {
+      width: 19%;
+    }
+
+  }
+
+  &--devlog {
+
+    @include tablet-only {
+      width: 46%;
+    }
+
+    @include desktop-only {
+      width: 45%;
+    }
+
+    @include widescreen-only {
+      width: 33%;
+    }
+
+    @include fullhd {
+      width: 29%;
+    }
+
+  }
+
+}
+
+ul.list-of-icons {
+  list-style-type: none;
+  margin-top: 0;
+  margin-left: -4px;
+
+  li {
+    display: inline-block;
+    margin: 0 4px;
+
+    a {
+      display: block;
+    }
+  }
+
+}
+
+.card {
+  height: 100%;
+  padding-bottom: 52px;
+
+  .card-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+
+.post-hero {
+  text-align: center;
+
+  &-image {
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &-caption {
+    color: #9D9D9D;
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 5px 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.video-presentation {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.video-presentation iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.logo {
+  position: relative;
+
+  &__mark {
+    max-height: none !important;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__text {
+    margin-left: 38px;
+    width: 150px;
+    margin-top: 3px;
+  }
+
+}
+
+
+.hero--home {
+  min-height: 0vh !important;
+
+  @include tablet {
+    min-height: 60vh !important;
+  }
+
+  .hero__title {
+    line-height: 1;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero__box {
+    background-color: rgba(#000, 0.75);
+    font-size: 20px;
+    padding: 10px 20px;
+    display: inline-block;
+
+    @include tablet {
+        max-width: 65%;
+    }
+  }
+
+.button {
+  margin-top: 10px;
+  background-color: $color-brand-green;
+  color: $white;
+  border-color: $color-brand-green;
+
+  &:hover {
+    background-color: $color-brand-orange;
+  }
+}
+
+  .hero__title {
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 5vw;
+  }
+
+  .boxed-color {
+    font-size: 3vw;
+    padding: 1vw 2vw;
+  }
+
+}
+
+.boxed-color {
+  display: inline-block;
+
+  &--brand-orange {
+    background-color: $color-brand-orange;
+    color: $white;
+  }
+
+}
+
+.slider {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  > div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &:after {
+    content: '';
+    background-image: url(/assets/images/website/slider/stripes.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+  }
+}
+
+
+$pOverlap: 20vh;
+
+@import 'partials/header';
+@import 'partials/nav';
+@import 'partials/intro';
+
+// .container {
+//   max-width: 980px;
+//   margin: 0 auto;
+//   padding: 0 20px;
+// }
+
+
+
+
+
+
+
+$translateZ: -1px;
+$perspective: 1px;
+$weirdConstant: 0.00895;
+$scale: #{1 + ($translateZ * -(1 + $weirdConstant)) / $perspective}; 
+// changing -1 to -1.00895 for some reason (trial and error) fixes left side padding bug (maybe it's connected to translateZ :s)
+
+$foregroundColor: #fff;
+$backgrounColor: #3498db;
+
+$triangleHeight: 75px;
+
+.parallax {
+  perspective: $perspective;
+  height: 100vh;
+  width:100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax__back,
+.parallax__front {
+  position: absolute;
+  top: 300px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.parallax__front {
+  margin-bottom: -100%;
+  top: -$pOverlap;
+  height:auto;
+  position:relative;
+  background-color:$foregroundColor;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  transform: translateZ(0);
+  &::before {
+    content: "";
+    position:absolute;
+    top:-$triangleHeight;
+    left:0;
+    //@include triangle(50vw $triangleHeight, #fff, down-left);
+  }
+  &::after {
+    content: "";
+    position:absolute;
+    top:-$triangleHeight;
+    right:0;
+    //@include triangle(50vw $triangleHeight, #fff, down-right);
+  }
+  p {
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+}
+
+.parallax__back {
+  color:#fff;
+  position:relative;
+  top: 0;
+  height:100vh;
+  //background-color:$backgrounColor;
+  //background-image: url("/assets/images/bg.jpg");
+  background-color: #121318;
+  background-position:center;
+  background-size:cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transform: translateZ($translateZ) scale($scale); // scale = 1 + (translateZ * -1) / perspective;
+
+
+  &:after {
+    background-image: url('https://images.fineartamerica.com/images-medium-large-5/charlotte-dusk-chris-austin.jpg');
+    background-position: center;
+    background-size:cover;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.06;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1
+  }
+  
+}
+
+
+
+.headshot {
+  position: relative;
+  user-select: none;
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  cursor: pointer;
+  border: 2px solid #A3CF5C;
+
+  &:hover {
+    .headshot__drawn {
+      opacity: 0;
+    }
+    .headshot__photo {
+      opacity: 1;
+    }
+  }
+
+
+}
+
+.headshot__drawn,
+.headshot__photo {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: 300ms opacity linear;
+  width: 100%;
+  border-radius: 100%;
+  pointer-events: none;
+}
+
+.headshot__drawn {
+  opacity: 1;
+}
+
+.headshot__photo {
+  opacity: 0;
+}
+
+
+
+

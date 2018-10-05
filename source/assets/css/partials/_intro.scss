@@ -1,0 +1,23 @@
+.intro {
+  left: 0;
+  margin-top: -($pOverlap/2);
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+} /* .intro */
+
+.intro__title {
+  color: #F3A14F;
+  display: block;
+  font-size: 30px;
+  margin-top: 10px;
+} /* .intro__title */
+
+.intro__tagline {
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  margin-top: 5px;
+} /* .intro__tagline */

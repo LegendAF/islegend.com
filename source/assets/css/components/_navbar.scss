@@ -1,0 +1,55 @@
+.navbar {
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
+}
+// .navbar
+
+.navbar-burger {
+  color: $white;
+}
+
+.navbar-dropdown {
+  color: $white;
+
+  a.navbar-item {
+    padding-right: 1rem;
+  }
+  // .navbar-dropdown a.navbar-item
+
+  strong {
+    color: inherit;
+  }
+  // .navbar-dropdown strong
+
+}
+// .navbar-dropdown
+
+.navbar-burger {
+  border: none;
+}
+// .navbar-burger
+
+.navbar-dropdown--blog {
+  width: 250px;
+
+  .navbar-item {
+    white-space: normal;
+  }
+  // .navbar-dropdown--blog .navbar-item
+
+}
+// .navbar-dropdown--blog
+
+.navbar-link {
+  padding-right: 1rem;
+
+  &:after {
+    display: none;
+  }
+}
+
+
+.navbar-menu {
+  @include touch {
+    background-color: $color-blue-light;
+  }
+}

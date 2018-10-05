@@ -1,0 +1,19 @@
+<section class="section">
+  <div class="container">
+    <h3 class="title">Recent Posts</h3>
+  	<div class="columns is-multiline has-equal-heights">
+  		<% blog.articles.take(6).each_with_index do |article, i| %>
+  			<% link_to article, :class => 'column is-4' do %>
+  				<article class="hover-zoom">
+  					<div class="hover-zoom-background" style="<%= article.data.key?(:featuredImage) and article.data.featuredImage.url ? 'background-image: url(' + article.data.featuredImage.url + ');' : '' %>"></div>
+  					<div class="container">
+  						<div class="hover-zoom-date"><%= article.date.strftime("%b #{article.date.day.ordinalize}, %Y") %></div>
+  						<h2 class="title"><%= article.title %></h2>
+  					</div>
+  				</article>
+  			<% end %>
+  		<% end %>
+  	</div>
+  	<%= partial "partials/posts/pagination" %>
+  </div>
+</section>

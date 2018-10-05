@@ -1,0 +1,41 @@
+.column.has-vertically-aligned-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.columns--flip-on-desktop {
+
+  .column {
+    &:first-child {
+      order: 2;
+    }
+    &:last-child {
+      order: 1;
+
+      @include tablet {
+        margin-left: 0;
+        margin-right: 8.33333%;
+      }
+    }
+  }
+
+}
+
+.columns {
+
+  &.has-equal-heights {
+
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    // .columns.has-equal-heights .column
+
+  }
+  // .columns.has-equal-heights
+
+}
+// .columns

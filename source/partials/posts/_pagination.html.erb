@@ -1,0 +1,24 @@
+<%
+  paginate    = current_page.metadata[:locals]["paginate"]
+  num_pages   = current_page.metadata[:locals]["num_pages"]
+  page_number = current_page.metadata[:locals]["page_number"]
+  prev_page   = current_page.metadata[:locals]["prev_page"]
+  next_page   = current_page.metadata[:locals]["next_page"]
+  url = '/devlog/';
+  if current_page.metadata[:locals]['tagname'] then url += 'tag/' + current_page.metadata[:locals]['tagname'] + '/' end
+  if current_page.metadata[:locals]['category'] then url += current_page.metadata[:locals]['category'] + '/' end
+%>
+
+<% if paginate and num_pages > 1 %>
+  <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+    <%= link_to 'Previous', prev_page, :disabled => !prev_page, :class => 'pagination-previous' %>
+    <%= link_to 'Next', next_page, :disabled => !next_page, :class => 'pagination-next' %>
+    <% if num_pages > 1 %>
+      <ul class="pagination-list">
+        <% 1.upto(num_pages) do |i| %>
+          <li><a href="<%= url %><%= i > 1 ? i.to_s + '/' : '' %>" class="pagination-link<%= page_number === i ? ' is-current' : '' %>" aria-label="Goto page <%= i %>"><%= i %></a></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </nav>
+<% end %>

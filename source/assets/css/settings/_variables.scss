@@ -1,0 +1,35 @@
+// color
+$color-blue: #1F374D;
+$color-blue-light: #2F4F6B;
+$color-blue-lighter: lighten($color-blue-light, 10%);
+$color-brand-green: #A4CB67;
+$color-brand-orange: #F6A05B;
+
+//
+$link: $color-brand-orange;
+//$link-hover:  $color-brand-orange;
+
+//
+// // footer
+$footer-background-color: $color-blue;
+
+
+$dropdown-content-shadow: 0px 5px 5px 0px rgba(0,0,0,0.1);
+
+
+
+//$family-serif: 'Lora', serif;
+
+
+// Navbar
+$navbar-height: 60px;
+$navbar-background-color: $color-blue;
+$navbar-item-color: $white;
+$navbar-item-hover-color: $white;
+$navbar-item-hover-background-color: $color-blue-light;
+$navbar-tab-hover-background-color: red;
+$navbar-dropdown-background-color: $color-blue-light;
+$navbar-dropdown-item-hover-color: $white;
+$navbar-dropdown-item-hover-background-color: $color-blue-lighter;
+$navbar-dropdown-border-top: 1px solid $color-blue;
+$navbar-divider-background-color: $color-blue;

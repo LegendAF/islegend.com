@@ -1,0 +1,37 @@
+<nav class="navbar is-fixed-top">
+  <div class="container">
+    <div class="navbar-burger" data-target="navMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/"><strong>About</strong></a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="/blog/"><strong>Blog</strong></a>
+          <div class="navbar-dropdown navbar-dropdown--blog">
+            <% blog.articles.each_with_index do |article, i| %>
+              <% if i < 3 %>
+                <% link_to article, :class => 'navbar-item' do %>
+                    <div class="navbar-content">
+                      <p><small class="is-brand-green"><strong><%= article.date.strftime("%b #{article.date.day.ordinalize}, %Y") %></strong></small></p>
+                      <p><%= article.title %></p>
+                    </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#"><strong>Projects</strong></a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://onesmartbunny.com/games#botpocalypse">Botpocalypse</a>
+            <a class="navbar-item" href="https://onesmartbunny.com//games#project-mayhem">Project: Mayhem</a>
+            <a class="navbar-item" href="https://onesmartbunny.com//games#psquared">pSquared</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,50 @@
+<%
+  @displayTitle =  (@titleFull ? @titleFull : (@title ? @title + ' &mdash; ' : '') + 'Alex Fernandez')
+  @displayDescription = (@description ? @description : 'The Internet home for Alex Fernandez.')
+  @displayDescription = (current_page.data.excerpt ? current_page.data.excerpt : @displayDescription)
+  @displayImage = (current_page.data.key?(:featuredImage) and current_page.data.featuredImage.url ? current_page.data.featuredImage.url : false)
+%>
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+  <title>
+    <%= @displayTitle %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#55bbbb">
+    <meta name="apple-mobile-web-app-title" content="OSB">
+    <meta name="application-name" content="OSB">
+    <meta name="theme-color" content="#22354a">
+    <meta name="p:domain_verify" content="e604fed0b2a9e43c90772805b37083dc">
+    <meta name="description" content="<%= @displayDescription %>">
+    <meta name="robots" content="noodp">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<%= @displayTitle %>">
+    <meta property="og:description" content="<%= @displayDescription %>">
+    <% if @displayImage %><meta property="og:image" content="https://www.islegend.com<%= @displayImage %>"><% end %>
+    <meta property="og:url" content="https://www.islegend.com<%= current_page.url %>">
+    <meta property="og:site_name" content="Alex Fernandez | entrepreneur, web craftsman, indie game developer">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="<%= @displayDescription %>">
+    <meta name="twitter:title" content="<%= @displayTitle %>">
+    <meta name="twitter:site" content="@alexfislegend">
+    <meta name="twitter:creator" content="@alexfislegend">
+    <%= stylesheet_link_tag "site" %>
+  </head>
+  <body>
+    <%= partial "partials/navigation/primary" %>
+    <%= yield %>
+    <%= javascript_include_tag "site" %>
+    <script>
+      hljs.initHighlightingOnLoad();
+      hljs.initLineNumbersOnLoad({
+        singleLine: true
+      });
+    </script>
+  </body>
+</html>

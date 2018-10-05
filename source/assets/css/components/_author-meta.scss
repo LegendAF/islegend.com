@@ -1,0 +1,62 @@
+.author-meta {
+  display: table;
+  width: 100%;
+
+  &-name {
+
+    a {
+      color: #535353;
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    // .author-meta-name a
+
+  }
+  // .author-meta-name
+
+  &-image {
+    border-radius: 100%;
+    display: table-cell;
+    height: 64px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 64px;
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+    // .author-meta-image img
+
+  }
+  // .author-meta-image
+
+  &-info {
+    display: table-cell;
+    line-height: 1;
+    padding-left: 15px;
+    vertical-align: middle;
+
+    > * {
+      margin-bottom: 5px;
+    }
+    // .author-meta-info > *
+
+  }
+  // .author-meta-info
+
+  &-date {
+    font-size: 12px;
+  }
+  // .author-meta-date
+
+  &-title {
+    font-size: 12px;
+  }
+  // .author-meta-title
+
+}
+// // .author-meta

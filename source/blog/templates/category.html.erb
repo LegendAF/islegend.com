@@ -1,0 +1,34 @@
+---
+pageable: true
+---
+
+<%
+  @title = data.categories[current_page.metadata[:locals][:category]].title + ' > Devlog'
+%>
+
+<section class="hero is-small is-light is-bold" style="background: #fff;">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-6">
+          <h1 class="title is-1"><strong><%= data.categories[current_page.metadata[:locals][:category]].title %></strong></h1>
+          <h2 class="subtitle" style="margin-top: -15px;">
+            <% if data.categories[current_page.metadata[:locals][:category]].key?('description') %>
+              <%= data.categories[current_page.metadata[:locals][:category]].description %>
+            <% else %>
+              Posts about <%= data.categories[current_page.metadata[:locals][:category]].key?('title') ? data.categories[current_page.metadata[:locals][:category]].title + ', ': '' %>game development, the trials and tribulation of running an independent game studio and chasing your passion. Follow along as we pretend to know what we are doing. :)
+            <% end %>
+          </h2>
+        </div>
+        <div class="hero-art hero-art--devlog">
+          <img src="/assets/images/art/group.png">
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</section>
+
+<section class="section is-paddingless-top">
+  <%= partial "partials/posts/paginated" %>
+</section>

@@ -1,0 +1,25 @@
+---
+pageable: true
+---
+
+<%
+  @title = 'Blog'
+%>
+
+<section class="hero is-small is-light is-bold" style="background: #fff;">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-12">
+          <h1 class="title is-1"><strong>Blog</strong></h1>
+          <h2 class="subtitle" style="margin-top: -15px;">Where I blog about things.</h2>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</section>
+
+<section class="section is-paddingless-top">
+  <%= partial "partials/posts/paginated" %>
+</section>

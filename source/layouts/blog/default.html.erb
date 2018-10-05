@@ -1,0 +1,63 @@
+<%
+  @title = current_article.data.title + ' > Blog'
+%>
+
+<% wrap_layout :layout do %>
+  <div class="post">
+    <section class="section">
+      <div class="container">
+        <div class="post-meta">
+          <div class="author-meta">
+            <div class="author-meta-image">
+              <img src="<%= data.author[current_page.data.author].headshot.url %>" alt="<%= data.author[current_page.data.author].headshot.description %>" class="avatar avatar-96 photo" height="96" width="96">
+            </div>
+            <div class="author-meta-info">
+                <div class="author-meta-name"><a href="#" title="Posts by <%= data.author[current_page.data.author].name %>" rel="author"><%= data.author[current_page.data.author].name %></a></div>
+                <div class="author-meta-title"><%= data.author[current_page.data.author].title %></div>
+                <div class="author-meta-date"><%= current_article.data.date.strftime("%b #{current_article.data.date.day.ordinalize}, %Y") %></div>
+            </div>
+          </div>
+          <% if current_page.data.key?(:category) %>
+            <div class="post-categories">
+              <strong>Categories:</strong>
+              <a href="/blog/" rel="category tag">Blog</a>,
+              <% if data.categories[current_page.data.category] %>
+                <a href="/blog/<%= current_page.data.category %>/" rel="category tag"><%= data.categories[current_page.data.category].title %></a>
+              <% else %>
+                [NO_DATA_FOR &mdash; <%= current_page.data.category %>]
+              <% end %>
+            </div>
+          <% end %>
+          <% if current_page.data.key?(:tags) and current_page.data.tags != nil %>
+            <div class="post-tags">
+              <strong>Tags:</strong>
+              <% current_page.data.tags.split(', ').each_with_index do |tag, i| %>
+                <% if data.tags[tag] %>
+                  <% link_to '/blog/tag/' + tag + '/' do %><%= data.tags[tag].title %><% end %><%if i != current_page.data.tags.split(', ').size - 1 %>,<% end %>
+                <% else %>
+                  [NO_DATA_FOR &mdash; <%= tag %>]
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <br>
+        <h1 class="post-title"><%= current_article.data.title %></h1>
+        <%= current_article.data.subtitle != nil ? '<h2 class="post-subtitle">' + current_article.data.subtitle + '</h2>' : '' %>
+      </div>
+    </section>
+    <% if current_page.data.featuredImage != nil %>
+      <div class="post-hero">
+        <img class="post-hero-image" src="<%= current_page.data.featuredImage.url %>" alt="Featured Image">
+        <span class="post-hero-caption"><%= current_page.data.featuredImage.caption %></span>
+      </div>
+    <% end %>
+    <section class="section">
+      <div class="container">
+        <div class="content">
+          <%= yield %>
+        </div>
+      </div>
+    </section>
+  </div>
+<% end %>
